@@ -5,11 +5,6 @@ pipeline {
 
  stages {
 
- stage('Code Checkout') {
-      steps {
-         echo 'Code Checkout'
-      }
- }
  stage('Built') {
        steps {
           echo 'Built'
