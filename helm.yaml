@@ -3,3 +3,18 @@ image:
 
 port: 8080
 component: cart
+
+serviceAccount:
+  create: true
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::752442278108:role/eks-prod-ssm-pm-role
+
+PARAMETERS: "REDIS_HOST,roboshop.prod.cart.redis_host CATALOGUE_HOST,roboshop.prod.cart.catalogue_host CATALOGUE_PORT,roboshop.prod.cart.catalogue_port"
+
+resources:
+  limits:
+    cpu: 350m
+    memory: 712Mi
+  requests:
+    cpu: 250m
+    memory: 512Mi
